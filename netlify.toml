@@ -1,0 +1,10 @@
+[build]
+  # 前端构建配置（之前的设置不变）
+  base = "frontend"
+  command = "npm install && npm run build"
+  publish = "frontend/dist"
+  # 后端Functions配置（告诉Netlify后端函数在netlify/functions目录）
+  functions = "netlify/functions"
+
+[dev]
+  functions = "netlify/functions"
