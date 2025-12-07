@@ -113,7 +113,7 @@ const ProductPage = () => {
     
     try {
       // 发送订阅请求到后端
-      const response = await fetch('/api/subscribe', {
+      const response = await fetch('/.netlify/functions/index/api/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
