@@ -1,10 +1,9 @@
 [build]
-  # 前端构建配置（之前的设置不变）
-  base = "frontend"
-  command = "npm install && npm run build"
-  publish = "frontend/dist"
-  # 后端Functions配置（告诉Netlify后端函数在netlify/functions目录）
-  functions = "netlify/functions"
+  base = ""  # 取消路径叠加，所有路径按根目录解析
+  # 构建命令：先进入frontend目录→安装依赖→构建（生成dist目录）
+  command = "cd frontend && npm install && npm run build"
+  publish = "frontend/dist"  # 构建后自动生成dist，Netlify托管该目录
+  functions = "netlify/functions"  # 后端函数目录（根目录下的netlify/functions）
 
 [dev]
   functions = "netlify/functions"
